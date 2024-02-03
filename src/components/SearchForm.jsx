@@ -1,8 +1,9 @@
 //styles
-import styles from '../styles/components/search.module.scss';
+import styles from '../styles/components/searchForm.module.scss';
 
 import { useState } from 'react';
 import findBestPetshop from '../utils/findBestPetshop';
+import PetshopCard from './PetshopCard';
 
 const SearchForm = ({ petshops }) => {
   const [date, setDate] = useState('');
@@ -58,6 +59,8 @@ const SearchForm = ({ petshops }) => {
       <h3>O melhot petshop é {bestPetshop.name}</h3>
       <p>Preço: {totalPrice}</p>
     </div>}
+
+    <PetshopCard />
     </>
   )
 }
