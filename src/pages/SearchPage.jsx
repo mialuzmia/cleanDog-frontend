@@ -1,8 +1,15 @@
+import SearchForm from "../components/SearchForm"
+
+import { useDataContext } from "../hooks/useDataContext"
 
 
 const SearchPage = () => {
+const { data, error, loading } = useDataContext();
+console.log(data);
   return (
-    <div>SearchPage</div>
+    <>
+    <SearchForm petshops={data}/>
+    </>
   )
 }
 

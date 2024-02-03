@@ -4,7 +4,7 @@ import styles from '../styles/components/search.module.scss';
 import { useState } from 'react';
 import findBestPetshop from '../utils/findBestPetshop';
 
-const Search = ({ petshops }) => {
+const SearchForm = ({ petshops }) => {
   const [date, setDate] = useState('');
   const [bigDogsNumber, setBigDogsNumber] = useState(0);
   const [smallDogsNumber, setSmallDogsNumber] = useState(0);
@@ -62,4 +62,4 @@ const Search = ({ petshops }) => {
   )
 }
 
-export default Search
+export default SearchForm

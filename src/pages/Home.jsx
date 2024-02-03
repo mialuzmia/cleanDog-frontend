@@ -1,3 +1,5 @@
+import { useDataContext } from "../hooks/useDataContext"
+
 
 const Home = () => {
   return (

@@ -9,9 +9,7 @@ import Router from './Router';
 import { useGet } from './hooks/useGet';
 
 function App() {
-  
-  const { data } = useGet('https://clean-dog.onrender.com/');
-  console.log(data);
+
   return (
     <main className={styles.app__container}>
       <Router />
