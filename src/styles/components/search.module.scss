@@ -1,0 +1,19 @@
+@use '../mixins.scss' as *;
+
+.search__container{
+  @include flexCenter;
+  flex-direction: column;
+
+  border: blue 1px solid;
+
+  padding: 1rem;
+  gap: 1rem;
+
+  min-width: 80%;
+
+
+  label{
+  @include flexCenter;
+    gap: .5rem;
+  }
+}

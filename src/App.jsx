@@ -1,12 +1,16 @@
+// styles
 import styles from './styles/components/app.module.scss';
+
+//components
+import Search from './components/Search';
 
 function App() {
   
 
   return (
-    <>
-      <h1>hello world</h1>
-    </>
+    <main className={styles.app__container}>
+      <Search />
+    </main>
   )
 }
 
