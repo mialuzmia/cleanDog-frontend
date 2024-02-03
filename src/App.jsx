@@ -9,11 +9,11 @@ import { useGet } from './hooks/useGet';
 
 function App() {
   
-  const { data } = useGet('http://localhost:3000');
+  const { data } = useGet('https://clean-dog.onrender.com/');
   console.log(data);
   return (
     <main className={styles.app__container}>
-      <Search />
+      <Search petshops={data} />
     </main>
   )
 }

@@ -7,7 +7,7 @@ const findBestPetshop = (shops, smallDogsNumber, bigDogsNumber, day) => {
   // initializes the best shop and best price as the first one in the array
   const firstPrices = getPricesBasedOnTheDay(shops[0], day); 
   let bestPrice = calculateTotalPrice(smallDogsNumber, firstPrices.smallPrice, bigDogsNumber, firstPrices.bigPrice);
-  let bestshop = shops[0];
+  let bestShop = shops[0];
 
   // pass on each item of the array and calculates the price in each store
   shops.forEach(shop => { 
@@ -18,19 +18,19 @@ const findBestPetshop = (shops, smallDogsNumber, bigDogsNumber, day) => {
     // if the price of the current shop is lower than the previous best price stores, it is stored in the best price variable and the shop is stored in best shop
     if(currentPrice < bestPrice ){
       bestPrice = currentPrice;
-      bestshop = shop;
+      bestShop = shop;
     }
     // if the prices are the same, the distance of the stores will be the tie-breaker
     else if (currentPrice === bestPrice){
-      if (shop.distance < bestshop.distance){
+      if (shop.distance < bestShop.distance){
         bestPrice = currentPrice;
-        bestshop = shop;
+        bestShop = shop;
       }
     }
 
   });
   
-  return bestshop;
+  return {bestShop, bestPrice};
 };
 
 const calculateTotalPrice = (smallDogsNumber, smallDogsPrice, bigDogsNumber, bigDogsPrice) => { // this function encapsulates the formula to get the total price
@@ -58,3 +58,4 @@ const getPricesBasedOnTheDay = (shop, day) => { // receive the day and the curre
 }
 
 export default findBestPetshop;
+
