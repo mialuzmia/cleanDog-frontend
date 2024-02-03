@@ -29,15 +29,21 @@
     flex-direction: column;
     gap: .5rem;
     width: 100%;
+    text-align: center;
+  }
 
+  span{
+    font-size: 1.1rem;
   }
 
   button{
     background-color: $blue;
     border: none;
-    padding: .5rem;
+    padding: .7rem;
     border-radius: .5rem;
     color: white;
+    font-size: 1.2ewm;
+    cursor: pointer;
   }
 }
 

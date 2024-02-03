@@ -20,25 +20,21 @@ const SearchForm = ({ petshops }) => {
     e.preventDefault();
     const day = new Date(date + 'T00:00:00').getDay();
 
-    console.log(day);
-
     const {bestShop, bestPrice} = findBestPetshop(petshops, smallDogsNumber, bigDogsNumber, day)
     setBestPetshop(bestShop);
     setTotalPrice(bestPrice);
-    console.log(bestShop.name, bestPrice);
-    console.log(bestPetshop, totalPrice);
+
   }
 
   return (
     <>
     <form className={styles.search__container} onSubmit={handleSubmit}>
       <label className={styles.date__container}>
-        <span>Qual dia você quer dar banho no seu doguinho?</span>
+        <span>Qual dia você quer dar banho nos seus doguinhos?</span>
         <input 
           type="date" 
           onChange={e => setDate((e.target.value))} 
           min={todayDate}
-          // max='2024-06-30'
           required
         />
       </label>
