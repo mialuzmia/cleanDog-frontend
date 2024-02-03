@@ -4,6 +4,7 @@ import styles from '../styles/components/searchForm.module.scss';
 import { useState } from 'react';
 import findBestPetshop from '../utils/findBestPetshop';
 import PetshopCard from './PetshopCard';
+import { useGetTodayDate } from '../hooks/useGetTodayDate';
 
 const SearchForm = ({ petshops }) => {
   const [date, setDate] = useState('');
@@ -11,6 +12,8 @@ const SearchForm = ({ petshops }) => {
   const [smallDogsNumber, setSmallDogsNumber] = useState(0);
   const [bestPetshop, setBestPetshop] = useState(null);
   const [totalPrice, setTotalPrice] = useState(null);
+
+  const { todayDate } = useGetTodayDate();
 
 
   const handleSubmit = (e) => {
@@ -34,7 +37,7 @@ const SearchForm = ({ petshops }) => {
         <input 
           type="date" 
           onChange={e => setDate((e.target.value))} 
-          min='2024-02-03'
+          min={todayDate}
           // max='2024-06-30'
           required
         />
