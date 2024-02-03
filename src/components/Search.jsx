@@ -39,7 +39,7 @@ const Search = () => {
       <span>Quantos cachorros granders você tem?</span>
         <input 
           type="number" 
-          onChangeCapture={e => setBigDogNumber(e.target.value)} 
+          onChange={e => setBigDogNumber(e.target.value)} 
           value={bigDogNumber}
         />
       </label>
