@@ -1,0 +1,14 @@
+@use '../mixins.scss' as *;
+
+.main__container{
+ @include flexCenter();
+  gap: .5rem
+}
+
+.button__container{
+  background-color: #86A7FC;
+  padding: .5rem;
+
+  border-radius:  .5rem;
+  cursor: pointer;
+}

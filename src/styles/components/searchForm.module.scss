@@ -25,12 +25,35 @@
 
 
   label{
-  @include flexCenter;
-  flex-direction: column;
+    @include flexCenter;
+    flex-direction: column;
     gap: .5rem;
+    width: 100%;
+
+  }
+
+  button{
+    background-color: #86A7FC;
+    border: none;
+    padding: .5rem;
+    border-radius: .5rem;
+    color: white;
   }
 }
 
-// .date__container{
+.date__container{
 
-// }
+  input{
+    padding: .3rem;
+  }
+}
+
+
+
+.number__container{
+  input{
+    width: 30%;
+    padding: .3rem;
+
+  }
+}

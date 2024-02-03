@@ -31,7 +31,13 @@ const SearchForm = ({ petshops }) => {
     <form className={styles.search__container} onSubmit={handleSubmit}>
       <label className={styles.date__container}>
         <span>Qual dia você quer dar banho no seu doguinho?</span>
-        <input type="date" onChange={e => setDate((e.target.value))} />
+        <input 
+          type="date" 
+          onChange={e => setDate((e.target.value))} 
+          min='2024-02-03'
+          // max='2024-06-30'
+          required
+        />
       </label>
 
       <label className={styles.number__container}>
@@ -40,6 +46,8 @@ const SearchForm = ({ petshops }) => {
           type="number" 
           onChange={e => setSmallDogsNumber(e.target.value)} 
           value={smallDogsNumber}
+          min='0'
+          required
         />
       </label>
 
@@ -49,18 +57,22 @@ const SearchForm = ({ petshops }) => {
           type="number" 
           onChange={e => setBigDogsNumber(e.target.value)} 
           value={bigDogsNumber}
+          min='0'
+          required
         />
       </label>
 
-      <button type='submit'>submit</button>
+      <button type='submit'>Enviar</button>
     </form>
 
-    {bestPetshop && <div>
-      <h3>O melhot petshop é {bestPetshop.name}</h3>
-      <p>Preço: {totalPrice}</p>
-    </div>}
+    {bestPetshop && <PetshopCard 
+      name={bestPetshop.name}
+      distance={bestPetshop.distance}
+      img={bestPetshop.image}
+      price={totalPrice}
+    />}
 
-    <PetshopCard />
+
     </>
   )
 }
