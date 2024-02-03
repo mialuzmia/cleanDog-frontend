@@ -2,7 +2,8 @@
 import styles from './styles/components/app.module.scss';
 
 //components
-import Search from './components/Search';
+import SearchForm from './components/SearchForm';
+import Router from './Router';
 
 //hooks
 import { useGet } from './hooks/useGet';
@@ -13,7 +14,8 @@ function App() {
   console.log(data);
   return (
     <main className={styles.app__container}>
-      <Search petshops={data} />
+      <Router />
+      {/* <SearchForm petshops={data} /> */}
     </main>
   )
 }
